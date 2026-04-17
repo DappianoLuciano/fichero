@@ -1,0 +1,7 @@
+node_modules/
+renderer/node_modules/
+dist-electron/
+renderer/dist/
+*.db
+*.db-journal
+.env

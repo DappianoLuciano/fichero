@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx prisma:*)",
+      "Bash(find c:UsersludapOneDriveDesktoprecetario -maxdepth 2 -type f \\\\\\(-name *.ico -o -name *.icns -o -name *.png -o -name *.svg \\\\\\))",
+      "Bash(grep -i -E \"\\\\.\\(png|jpg|jpeg|ico|svg|bmp\\)$\")",
+      "Bash(npm install:*)",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"const m = require\\(''png-to-ico''\\); console.log\\(typeof m, Object.keys\\(m\\)\\)\")",
+      "Bash(npm run:*)",
+      "Bash(ie4uinit.exe -show)",
+      "Bash(ie4uinit.exe -ClearIconCache)",
+      "Bash(taskkill /f /im explorer.exe)",
+      "Bash(del /f /q \"%localappdata%\\\\Microsoft\\\\Windows\\\\Explorer\\\\iconcache*\")",
+      "Bash(del /f /q \"%localappdata%\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache*\")",
+      "Bash(start explorer.exe)"
+    ]
+  }
+}

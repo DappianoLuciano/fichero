@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../main/prisma-client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Paciente {
+  id       Int      @id @default(autoincrement())
+  nombre   String
+  creadoEn DateTime @default(now())
+  recetas  Receta[]
+}
+
+model Receta {
+  id         Int          @id @default(autoincrement())
+  pacienteId Int
+  fecha      DateTime     @default(now())
+  paciente   Paciente     @relation(fields: [pacienteId], references: [id], onDelete: Cascade)
+  fotos      FotoReceta[]
+}
+
+model FotoReceta {
+  id            Int    @id @default(autoincrement())
+  recetaId      Int
+  foto          String
+  observaciones String @default("")
+  receta        Receta @relation(fields: [recetaId], references: [id], onDelete: Cascade)
+}
+
+model PacienteLente {
+  id       Int           @id @default(autoincrement())
+  nombre   String
+  creadoEn DateTime      @default(now())
+  recetas  RecetaLente[]
+}
+
+model RecetaLente {
+  id              Int               @id @default(autoincrement())
+  pacienteLenteId Int
+  fecha           DateTime          @default(now())
+  paciente        PacienteLente     @relation(fields: [pacienteLenteId], references: [id], onDelete: Cascade)
+  fotos           FotoRecetaLente[]
+}
+
+model FotoRecetaLente {
+  id            Int         @id @default(autoincrement())
+  recetaLenteId Int
+  foto          String
+  observaciones String      @default("")
+  receta        RecetaLente @relation(fields: [recetaLenteId], references: [id], onDelete: Cascade)
+}
