@@ -98,7 +98,7 @@ export default function PacientesLentesPage({ onVerPaciente }) {
     <div className="page">
       <div className="pageHeaderRow">
         <div>
-          <h2 className="pageTitle">Pacientes Lentes de Contacto</h2>
+          <h2 className="pageTitle">Contactología (LDC)</h2>
           <p className="pageHint">{pacientes.length} paciente{pacientes.length !== 1 ? "s" : ""} registrado{pacientes.length !== 1 ? "s" : ""}</p>
         </div>
         <button className="btnPrimary" style={{ width: "auto" }} onClick={abrirModal}>

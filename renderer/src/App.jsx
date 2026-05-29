@@ -144,7 +144,7 @@ function applyTheme(key) {
 
 const NAV = [
   { section: "Pacientes", key: "pacientes", label: "Pacientes" },
-  { section: "Lentes de Contacto", key: "pacientesLentes", label: "Pacientes Lentes de Contacto" },
+  { section: "Contactología", key: "pacientesLentes", label: "LDC" },
 ];
 
 export default function App() {
